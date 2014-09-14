@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>THE ARTGITAL RUN</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/createjs-2013.12.12.min.js"></script>
+    <script src="http://localhost:7777/socket.io/socket.io.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/host-io.js"></script>
+    <script src="js/host-main.js"></script>
+    <script src="js/string.format.js"></script>
+    <meta http-equiv="pragma" content="no-cache" charset="UTF-8">
+	<style type="text/css"> 
+        #canvas-main{
+            border:5px solid black
+        }
+		#loading-screen{
+			position: absolute;
+			top: 350px;
+			left: 450px;
+		}
+          .bubble {
+            position: absolute;
+            width: 153px;
+            height: 37px;
+            padding: 0px;
+            background: #299DF5;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            line-height: 37px;
+            padding-left: 8px;
+            color: white;
+            display: none;
+        }
+
+          .bubble:after {
+            content: "";
+            position: absolute;
+            top: 12px;
+            left: -10px;
+            border-style: solid;
+            border-width: 8px 10px 8px 0;
+            border-color: transparent #299DF5;
+            display: block;
+            width: 0;
+            z-index: 1;
+        }
+
+        .bubble-ma {
+            width: 66px;
+        }
+	</style>
+</head>
+<body>
+
+<div class="bubble bubble-wang">腫花民鍋～腫花民鍋～</div>
+<div class="bubble bubble-ma">謝謝指教</div>
+<div id='loading-screen'>
+	<center>
+		<h1>Loading...</h1>
+	</center>
+</div>
+<canvas id='canvas-main' width='1024' height='768'></canvas>
+</body>
+</html>

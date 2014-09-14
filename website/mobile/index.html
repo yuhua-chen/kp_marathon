@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KP馬拉松</title>
+    <script src="js/jquery.min.js"></script>
+	<script src="js/shake.js"></script>
+    <script src="js/main.js"></script>
+    <script src="http://10.10.10.20:7777/socket.io/socket.io.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" charset="UTF-8" >
+	<style type="text/css"> 
+        #body{
+            padding: 0px;
+            margin: 0px;
+        }
+        #canvas-touch{
+            border: 1px solid red;
+            background: white;
+        }
+        #scene-result{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            background: #ff0;
+            z-index: 2;
+        }
+        #scene-welcome{
+            background-image: url('assets/background.jpg');
+            background-repeat: repeat;
+            position: fixed;
+            width: 100%;
+            height: 120px;
+            top: 0px;
+            left: 0px;
+            z-index: 1;
+        }
+
+        #group-naming-complete{
+
+        }
+
+        #scene-game-play{
+            position: fixed;
+            z-index: 0;
+        }
+        #ui-inputbox-name{
+            font-size: 130%;
+        }
+        #ui-button-join{
+            font-size: 150%;
+        }
+
+        #touch-area{
+            position: fixed;
+            background: white;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+        }
+
+        #result-image{
+            width: 100%;
+            height: 100%;
+        }
+
+        #image-logo{
+            width: 50%;
+        }
+	</style>
+</head>
+<body>
+    <div id='scene-welcome'>
+    	<center>
+			<h2 id='scene-title'><b>KP馬拉松</b></h2>
+
+            <div id='group-naming-box'>
+                <h3 style='color: white;'>讓我們一起邁向臺北市政府</h3>
+				</br>
+                <h4 style='color: #d6bd47;'>請輸入您的暱稱</h4>
+                <input type="text" id="ui-inputbox-name"></br></br>
+                <input type="submit" id="ui-button-join" value="加入遊戲" onclick="Join();">
+                </br>
+                </br>
+                </br>
+                </br>
+                <img id='image-logo' src='assets/logo.png'>
+            </div>
+
+            <div id='group-naming-complete' style='display: none;'>
+                <h2>歡迎加入遊戲</h2>
+                <h2 id='ui-text-username' style='color: white;'>Username</h2>
+
+                <h3 id='ui-text-username'>正在等待其他玩家加入...</h3>
+            </div>
+        </center>
+    </div>
+    <div id='scene-game-play' style="display: none;">
+	    <div id='touch-area'>
+            <center>
+                <h2>開始搖晃你的手機!</h2>
+            </center>
+        </div>
+    </div>
+    <div id='scene-result' style="display: none;">
+        <center>
+            <h1>抵達終點!</h1>
+            <h2 id='result-text'></h2>
+			<!-- <input style='display: none;' type="submit" id="ui-button-lottery" value="我要抽獎" onclick="onLottery();">
+            <img id='result-image' src=''/> -->
+        </center>
+    </div>
+
+</body>
+</html>
